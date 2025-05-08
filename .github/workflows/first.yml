@@ -1,0 +1,25 @@
+name: first
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  job1: 
+    name: First Job
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run a one line script
+        run: echo Hello from Job 1!
+  job2: 
+    name: Second Job
+    runs-on: windows-latest
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run a one line script
+        run: echo Hello from Job 2!
